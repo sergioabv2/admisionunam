@@ -1,0 +1,665 @@
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
+<link rel="icon" href="" type="image/x-icon">
+    <title>Admisión PUMA</title>
+   
+    <meta name="google-signin-client_id" content="613538890545-o4p4ft7oji6uhimgh0inqn5l5cgv1gnm.apps.googleusercontent.com">
+   <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+ 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+
+
+<style>
+    body {
+  background-color: #fff;
+  font-family: 'Karla', sans-serif; }
+
+
+h1 {
+    letter-spacing: -1px;
+}
+
+.strong-shadow {
+  color: white;
+  text-shadow: 1px 2px 3px black, 0px 8px 13px black, 0px 18px 23px black!important;  
+}
+
+.strong-white {
+  color: white;
+  text-shadow: 1px 2px 3px silver, 0px 8px 13px silver, 0px 18px 23px silver!important;  
+}
+
+
+.intro-section {
+  background-image: url(https://lh3.googleusercontent.com/d/1J1s3ymy5g9_pmkQ76y-r28_8xw4xJ_Sq);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 75px 95px;
+  min-height: 100vh;
+  height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  color: #ffffff; }
+  @media (max-width: 991px) {
+    .intro-section {
+      padding-left: 50px;
+      padding-rigth: 50px; } }
+  @media (max-width: 767px) {
+    .intro-section {
+      padding: 28px; } }
+  @media (max-width: 575px) {
+    .intro-section {
+      min-height: auto; display:none;}    
+}
+
+
+.brand-wrapper .logo {
+  height: 35px; }
+
+@media (min-width: 767px) {
+  .brand-wrapper {
+    margin-top: -35px; } }
+
+.intro-content-wrapper {
+  width: 410px;
+  max-width: 100%;
+  margin-top: 200px;
+  margin-bottom: auto; }
+  .intro-content-wrapper .intro-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 17px; }
+  .intro-content-wrapper .intro-text {
+    font-size: 19px;
+    line-height: 1.37; }
+  .intro-content-wrapper .btn-read-more {
+    background-color: #fff;
+    padding: 7px 30px;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000; }
+    .intro-content-wrapper .btn-read-more:hover {
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff; }
+
+
+.intro-section-footer .footer-nav a {
+  font-size: 20px;
+  font-weight: bold;
+  color: inherit; }
+  @media (max-width: 767px) {
+    .intro-section-footer .footer-nav a {
+      font-size: 14px; } }
+  .intro-section-footer .footer-nav a + a {
+    margin-left: 30px; }
+
+.form-section {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center; }
+  @media (max-width: 767px) {
+    .form-section {
+      padding: 35px; } }
+
+.login-wrapper {
+  width: 300px;
+  max-width: 100%; }
+  @media (max-width: 575px) {
+    .login-wrapper {
+      width: 100%; } }
+  .login-wrapper .form-control {
+    border: 0;
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 10px;
+    margin-bottom: 7px; }
+    .login-wrapper .form-control::-webkit-input-placeholder {
+      color: #b0adad; }
+    .login-wrapper .form-control::-moz-placeholder {
+      color: #b0adad; }
+    .login-wrapper .form-control:-ms-input-placeholder {
+      color: #b0adad; }
+    .login-wrapper .form-control::-ms-input-placeholder {
+      color: #b0adad; }
+    .login-wrapper .form-control::placeholder {
+      color: #b0adad; }
+
+.login-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px; }
+
+.login-btn {
+  padding: 13px 30px;
+  background-color: #000;
+  border-radius: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff; }
+  .login-btn:hover {
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #000; }
+
+.forgot-password-link {
+  font-size: 14px;
+  color: #080808;
+  text-decoration: underline; }
+
+.social-login-title {
+  font-size: 15px;
+  color: #919aa3;
+  display: -webkit-box;
+  display: flex;
+  margin-bottom: 23px; }
+  .social-login-title::before, .social-login-title::after {
+    content: "";
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#f4f4f4));
+    background-image: linear-gradient(#f4f4f4, #f4f4f4);
+    -webkit-box-flex: 1;
+            flex-grow: 1;
+    background-size: calc(100% - 20px) 1px;
+    background-repeat: no-repeat; }
+  .social-login-title::before {
+    background-position: center left; }
+  .social-login-title::after {
+    background-position: center right; }
+
+.social-login-links {
+  text-align: center;
+  margin-bottom: 32px; }
+
+.social-login-link img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain; }
+
+.social-login-link + .socia-login-link {
+  margin-left: 16px; }
+
+.login-wrapper-footer-text {
+  font-size: 14px;
+  text-align: center; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flex-flex {
+    display: flex;
+}
+.align-center {
+  align-items: center; 
+}
+.center-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-direction--column {
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+
+.padding-top--64 {
+  padding-top: 64px;
+}
+.padding-top--24 {
+  padding-top: 24px;
+}
+
+.padding-bottom--24 {
+  padding-bottom: 24px;
+}
+.padding-horizontal--48 {
+  padding: 48px;
+}
+ 
+/* @media (max-width: 575px) {
+    .padding-horizontal--48 {
+  padding: 1px;
+} }*/
+.padding-bottom--15 {
+  padding-bottom: 15px;
+}
+
+
+.flex-justifyContent--center {
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+
+
+
+.footer-link span {
+  margin-top: 140px;
+    font-size: 14px;
+    text-align: center;
+}
+.listing a {
+    color: #697386;
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+
+
+
+ .login-container {
+            text-align: center;
+            max-width: 400px;
+   height: 60vh; 
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+     
+   
+        }
+
+.logo-img {
+    max-width: 130px; 
+    height: auto; 
+    display: block; 
+  border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+        .login-btn, .back-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+.login-btn-icon{
+  margin-right: 5px; 
+  margin-top: -7px;
+  font-size: 22px;
+  float: left;
+}
+     
+       .login-btn-email, .g_id_signin {
+    /*width: 83%;*/
+    height: 40px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #3c4043;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 12px;
+}
+
+.login-btn-email:hover {
+    background-color: #f7f8f8;
+}
+
+.login-btn-email:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px rgba(66, 133, 244, 0.3);
+}
+      
+
+        .signup-link {
+
+           margin-top: 10px;
+
+        }
+
+        .signup-link a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+      #whatsapp-login {
+            margin-top: 30px;
+            display: none;
+        }
+
+        #maillogin, #signupform {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #login-options {
+            display: block;
+        }
+
+        .back-btn {
+            background-color: #f2f2f2;
+            color: #555;
+        }
+
+        .back-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+.showbox {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+
+.loader {
+  position: relative;
+  margin: 0px auto;
+  width: 100px;
+}
+.loader:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.circular {
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@-webkit-keyframes color {
+  100%, 0% {
+    stroke: #d62d20;
+  }
+  40% {
+    stroke: #0057e7;
+  }
+  66% {
+    stroke: #008744;
+  }
+  80%, 90% {
+    stroke: #ffa700;
+  }
+}
+@keyframes color {
+  100%, 0% {
+    stroke: #d62d20;
+  }
+  40% {
+    stroke: #0057e7;
+  }
+  66% {
+    stroke: #008744;
+  }
+  80%, 90% {
+    stroke: #ffa700;
+  }
+}
+
+
+   @media (min-width: 1000px){
+     .intro-content-wrapper{
+      margin-top: 260px ;
+    }
+  }
+</style>
+
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-md-7 intro-section">
+          <div class="brand-wrapper strong-shadow" style="margin-left: -30px;">
+            <h1>Taller de Piano</h1>
+          </div>
+          <div class="intro-content-wrapper" style="margin-left: -30px;">
+        <br><br>
+            <h1 class="intro-title strong-shadow">Bienvenido al Taller de Piano!</h1>
+            <p class="intro-text strong-shadow">En este curso obtendrás una lectura fluida de partituras y por consecuencia limpieza en la interpretación de piezas.</p>
+          
+          </div>
+        <!--  <div class="intro-section-footer" style="margin-top: 40px;">
+            <na class="footer-nav strong-white">
+      <a href="https://www.facebook.com/mozartstudio.academy">Facebook</a> 
+<a href="https://www.instagram.com/mozart.academy_/" >Instagram</a> 
+<a href="https://www.youtube.com/@TallerdePiano" >YouTube</a> 
+            </na>
+          </div> -->
+        </div>
+        
+        
+        
+        
+         <div class="col-sm-6 col-md-5 box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9; ">
+       
+           
+           
+          
+           
+          
+        <div class="formbg-outer" >
+          <div class="formbg">
+      
+              <div class="login-container d-flex flex-column justify-content-between min-vh-100">
+                
+              
+                 
+       <div id="login-options">
+           <img src="https://lh3.googleusercontent.com/d/1gKcJhLR1YaURt0Y5Z6ypPbj-yY8KcVhZ"  class="logo-img my-3">
+    <h4 class="mt-3">Inicia sesión</h4>
+        
+<br><br><br>
+    <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
+      
+      
+      <div class="preloader showbox" style="display: none">
+    <div class="loader">
+        <svg class="circular" viewbox="25 25 50 50">
+          <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+        </svg>
+     
+      </div>
+  </div> 
+      
+      
+      
+   <div class="buttons-container" >     
+        <div id="g_id_onload"
+            data-client_id="613538890545-o4p4ft7oji6uhimgh0inqn5l5cgv1gnm.apps.googleusercontent.com"
+            data-context="signup"
+            data-ux_mode="popup"
+            data-callback="handleCredentialResponse"
+            data-auto_prompt="false">
+        </div>
+
+        <div id="sign" class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+           data-theme="filled_blue"
+            data-text="signin_with"
+            data-size="large"
+            data-logo_alignment="left" onclick="showLoader()">
+        </div>
+
+ 
+ 
+         </div>
+    </div>
+
+  
+</div>
+                    
+    </div>
+      
+          </div>
+        </div>
+      </div>   
+      </div>
+    </div>
+
+
+
+
+
+<script>
+
+
+  function handleCredentialResponse(response) {
+  const responsePayload = decodeJwtResponse(response.credential);
+    
+    var email = responsePayload.email
+    showLoader();
+    var api = "https://script.google.com/macros/s/AKfycbxXD35z5FSf_m_dwBt5qcBwWq2L7IDc7KBrYGfix6hUa4kvJ1TFpjU82NltFXezUroGgQ/exec";
+
+  var validationData = {
+    redirect: "follow",
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify({
+      action: "validateAdmin",
+      email: email
+    })
+  };
+
+  fetch(api, validationData)
+    .then(response => response.text())
+    .then(res => {
+      var validation = JSON.parse(res);
+      if (validation.status == "success") {
+        localStorage.setItem('ADtoken', validation.token);
+       window.location.href = 'https://admin.mozartacademy.mx/main'; 
+      } else {
+        alert('Usuario no encontrado.');
+      }
+    })
+}
+
+
+
+function decodeJwtResponse(data) {
+  let tokens = data.split(".");
+  return JSON.parse(atob(tokens[1]))
+}
+
+
+function showLoader() {
+  $('.preloader').css({'display': 'block'});  
+  $('.buttons-container').css({'display': 'none'});  
+
+  setTimeout(function() {
+    $('.preloader').css({'display': 'none'});  
+    $('.buttons-container').css({'display': 'block'});  
+  }, 4000); // 10000 milisegundos = 10 segundos
+}
+
+
+
+
+
+$(window).on('load', function() { 
+  var storedToken = localStorage.getItem('ADtoken');
+  if (storedToken) {
+    window.location.href = 'https://admin.mozartacademy.mx/main'
+  } 
+});
+
+</script>
