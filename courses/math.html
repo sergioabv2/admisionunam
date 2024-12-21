@@ -181,22 +181,78 @@ section {
 
 
 <script>
-  
+
 var studentsApp = angular.module('studentsApp', []);
 studentsApp.controller('Controller1', ['$http', '$scope', '$timeout', function($http, $scope, $timeout) {
 
- $scope.flashcards = [ {
-            subject: 'matematicas',
-            question: '¿Cuánto es 2 + 2?',
-            options: ['3', '4', '5', '6'],
-            answer: '4'
-        },
-        {
-            subject: 'español',
-            question: '¿Cuál es un verbo?',
-            options: ['Perro', 'Correr', 'Azul', 'Casa'],
-            answer: 'Correr'
-        }]
+ $scope.flashcards = [
+  {
+    "subject": "matematicas",
+    "question": "¿Cuál es el resultado de 7 + 8?",
+    "options": ["12", "15", "14", "13"],
+    "answer": "15"
+  },
+  {
+    "subject": "español",
+    "question": "¿Qué tipo de palabra es 'rápidamente'?",
+    "options": ["Adverbio", "Adjetivo", "Sustantivo", "Verbo"],
+    "answer": "Adverbio"
+  },
+  {
+    "subject": "quimica",
+    "question": "¿Qué elemento tiene el símbolo H?",
+    "options": ["Helio", "Hierro", "Hidrógeno", "Hafnio"],
+    "answer": "Hidrógeno"
+  },
+  {
+    "subject": "fisica",
+    "question": "¿Qué unidad se usa para medir la fuerza?",
+    "options": ["Pascal", "Newton", "Joule", "Watt"],
+    "answer": "Newton"
+  },
+  {
+    "subject": "biologia",
+    "question": "¿Cuál es la unidad básica de la vida?",
+    "options": ["Tejido", "Célula", "Átomo", "Órgano"],
+    "answer": "Célula"
+  },
+  {
+    "subject": "historia universal",
+    "question": "¿En qué año comenzó la Primera Guerra Mundial?",
+    "options": ["1914", "1939", "1929", "1918"],
+    "answer": "1914"
+  },
+  {
+    "subject": "historia de méxico",
+    "question": "¿Quién fue el primer presidente de México?",
+    "options": ["Benito Juárez", "Vicente Guerrero", "Guadalupe Victoria", "Porfirio Díaz"],
+    "answer": "Guadalupe Victoria"
+  },
+  {
+    "subject": "geografia",
+    "question": "¿Cuál es el río más largo del mundo?",
+    "options": ["Nilo", "Amazonas", "Yangtsé", "Misisipi"],
+    "answer": "Amazonas"
+  },
+  {
+    "subject": "literatura",
+    "question": "¿Quién escribió 'Don Quijote de la Mancha'?",
+    "options": ["Miguel de Cervantes", "William Shakespeare", "Gabriel García Márquez", "Jorge Luis Borges"],
+    "answer": "Miguel de Cervantes"
+  },
+  {
+    "subject": "matematicas",
+    "question": "¿Qué es un número primo?",
+    "options": [
+      "Un número divisible solo por 1 y por sí mismo",
+      "Un número divisible por 2",
+      "Un número con más de dos divisores",
+      "Un número divisible por 10"
+    ],
+    "answer": "Un número divisible solo por 1 y por sí mismo"
+  }
+]
+
   
 
   
@@ -227,15 +283,10 @@ $scope.selectOption = function (option, index) {
     } 
  
 };
-
- 
   
-}])
-
-
-
-
-new Swiper(".swiper2", {
+ var swiperInstance = null; 
+  if (swiperInstance) { swiperInstance.destroy(true, true); }
+  swiperInstance = new Swiper(".swiper2", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -250,4 +301,10 @@ new Swiper(".swiper2", {
     slideShadows: true
   }
 });
+
+ 
+  
+}])
+
+
 </script>
