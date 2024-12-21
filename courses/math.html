@@ -182,8 +182,10 @@ section {
 
 <script>
 
+
 var studentsApp = angular.module('studentsApp', []);
 studentsApp.controller('Controller1', ['$http', '$scope', '$timeout', function($http, $scope, $timeout) {
+   var swiperInstance = null; 
 
  $scope.flashcards = [
   {
@@ -288,8 +290,12 @@ $scope.selectOption = function (option, index) {
  
 };
   
- var swiperInstance = null; 
-  if (swiperInstance) { swiperInstance.destroy(true, true); }
+  
+function initializeSwiper() {
+  $timeout(function() {
+    if (swiperInstance) { 
+      swiperInstance.destroy(true, true); 
+    }
   swiperInstance = new Swiper(".swiper2", {
   effect: "coverflow",
   grabCursor: true,
@@ -305,9 +311,15 @@ $scope.selectOption = function (option, index) {
     slideShadows: true
   }
 });
-
+  })
+}           
+ initializeSwiper()
   
 }])
+
+
+
+
 
 
 </script>
