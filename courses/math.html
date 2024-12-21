@@ -276,10 +276,14 @@ studentsApp.controller('Controller1', ['$http', '$scope', '$timeout', function($
 
 $scope.selectOption = function (option, index) {
     const currentCard = $scope.flashcards[index];
-    if (!currentCard.selectedOption) { // Prevenir cambios una vez seleccionada
-        currentCard.selectedOption = option; // Guardar la opción seleccionada
+    if (!currentCard.selectedOption) { 
+        currentCard.selectedOption = option; 
         currentCard.isCorrect = option === currentCard.answer; 
-          $scope.currentIndex++;
+        setTimeout(() => {
+            if (swiperInstance) {
+                swiperInstance.slideNext(); 
+            }
+        }, 500);
     } 
  
 };
@@ -302,7 +306,6 @@ $scope.selectOption = function (option, index) {
   }
 });
 
- 
   
 }])
 
