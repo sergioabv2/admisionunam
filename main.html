@@ -1029,6 +1029,26 @@ ion-side-menu .list .item:hover {
   </script>
 
 
+          
+    <script id="flashcardMath.html" type="text/ng-template">
+    <ion-view >
+      
+     <ion-nav-bar class="bar-light" >     
+       <ion-nav-buttons side="left">
+    <button class="button button-clear" ng-click="goToMain()">
+      <i class="ri-arrow-left-s-line"></i> regresar
+    </button>
+  </ion-nav-buttons>  
+    </ion-nav-bar>
+      
+      <ion-content > 
+
+
+        <div class="iframe-container"><iframe id="profileFrame" src="https://sergioabv2.github.io/admisionunam/courses/math" frameborder="0" allowfullscreen></iframe></div>   
+      </ion-content>
+    </ion-view>
+  </script>
+
 
   <script id="status.html" type="text/ng-template">
     <ion-view>
@@ -1537,6 +1557,14 @@ app
       views: {
         'menuContent': {
           templateUrl: "profile.html"
+        }
+      }
+    })
+         .state('menu.flashcardMath', {
+      url: "/flashcardMath",
+      views: {
+        'menuContent': {
+          templateUrl: "flashcardMath.html"
         }
       }
     })
