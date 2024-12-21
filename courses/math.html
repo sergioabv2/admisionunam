@@ -1,1 +1,253 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"></link>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+ </head>
 
+
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.swiper2 {
+  width: 650px;
+  height: 500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+ 
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  filter: blur(1px);
+  border-radius: 10px;
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: end;
+  align-items: self-start;
+  background-color: white;
+  color: black;
+}
+
+.swiper-slide-active {
+  filter: blur(0px);
+}
+
+
+.swiper-slide span {
+  position: absolute; /* Posiciona el span en relación al swiper-slide */
+  top: 20px; /* Ajusta la distancia desde la parte superior */
+  left: 0; /* Alineado al borde izquierdo */
+  text-transform: uppercase;
+  color: #fff;
+  padding: 7px 18px 7px 25px;
+  display: inline-block;
+  border-radius: 0 20px 20px 0px;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-family: "Open Sans", sans-serif;
+ 
+}
+
+
+
+
+.swiper-slide h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  padding: 25px 45px 0 25px;
+}
+
+.swiper-slide p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  padding: 0 25px 35px 25px;
+ 
+}
+
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.card-content h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 60px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.option-button {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  max-width: 300px;
+}
+
+.option-button:hover {
+  background-color: #d0d0d0;
+}
+
+.option-button:active {
+  background-color: #b0b0b0;
+}
+
+.correct {
+  background-color: #4caf50; /* Verde para la respuesta correcta */
+  color: white;
+}
+
+.wrong {
+  background-color: #f44336; /* Rojo para la respuesta incorrecta */
+  color: white;
+}
+
+.option-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+</style>
+ 
+<section ng-app="studentsApp" ng-controller="Controller1">
+  <div class="swiper2" ng-init="swiperInstance = null">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" ng-repeat="card in flashcards">
+        <span ng-style="{'background-color': getSubjectColor(card.subject)}">
+          {{card.subject}}
+        </span>
+        <div class="card-content">
+          <h2>{{card.question}}</h2>
+          <div class="options">
+  <button 
+    ng-repeat="option in card.options"
+    ng-click="selectOption(option, $parent.$index)" 
+    class="option-button"
+    ng-class="{
+      'correct': option === card.answer && card.selectedOption,
+      'wrong': option === card.selectedOption && option !== card.answer
+    }" 
+    ng-disabled="!!card.selectedOption" 
+  >
+    {{option}}
+  </button>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  
+var studentsApp = angular.module('studentsApp', []);
+studentsApp.controller('Controller1', ['$http', '$scope', '$timeout', function($http, $scope, $timeout) {
+
+ $scope.flashcards = [ {
+            subject: 'matematicas',
+            question: '¿Cuánto es 2 + 2?',
+            options: ['3', '4', '5', '6'],
+            answer: '4'
+        },
+        {
+            subject: 'español',
+            question: '¿Cuál es un verbo?',
+            options: ['Perro', 'Correr', 'Azul', 'Casa'],
+            answer: 'Correr'
+        }]
+  
+
+  
+  
+    $scope.getSubjectColor = function (subject) {
+        const colors = {
+            matematicas: '#408CA0',
+            español: 'orange',
+            quimica: '#6F40A0',
+            fisica: '#255379',
+            biologia: '#5BA03B',
+            'historia universal': '#EB921A',
+            'historia de méxico': '#FF656F',
+            geografia: '#B4EBEF',
+            literatura: '#EFDBB3'
+        };
+        return colors[subject.toLowerCase()] || '#FFFFFF'; // Blanco por defecto si no hay coincidencia
+    };
+  
+   $scope.currentIndex = 0; // Controla la tarjeta actual
+
+$scope.selectOption = function (option, index) {
+    const currentCard = $scope.flashcards[index];
+    if (!currentCard.selectedOption) { // Prevenir cambios una vez seleccionada
+        currentCard.selectedOption = option; // Guardar la opción seleccionada
+        currentCard.isCorrect = option === currentCard.answer; 
+          $scope.currentIndex++;
+    } 
+ 
+};
+
+ 
+  
+}])
+
+
+
+
+new Swiper(".swiper2", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 2,
+ 
+  spaceBetween: 30,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 50,
+    depth: 120,
+    modifier: 2,
+    slideShadows: true
+  }
+});
+</script>
