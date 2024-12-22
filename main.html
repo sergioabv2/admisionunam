@@ -1,6 +1,6 @@
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
 <link rel="icon" href="https://lh3.googleusercontent.com/d/1h0PAuatp8mguH19cso6wh19mjMVa0K5V" type="image/x-icon">
     <title>Mozart Appcademy</title>
   
@@ -123,7 +123,7 @@ ion-side-menu {
 
 
 ion-side-menu .list .item {
-  padding: 15px 20px;
+  padding: 20px 40px;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -136,7 +136,7 @@ ion-side-menu .list .item {
 }
 
 ion-side-menu .list .item i {
-  font-size: 20px;
+  font-size: 22px;
   color: #374151;
   margin-right: 10px; /* Espaciado entre ícono y texto */
 }
@@ -155,7 +155,7 @@ ion-side-menu .list .item:hover {
 
 .menuSelectedColor {    
 
-    background-color: #f0f2f5 !important;
+    background-color: #f0f2f5 !important; 
   color: #1F2937 !important;
   font-weight:bold;
 }
@@ -208,7 +208,7 @@ ion-side-menu .list .item:hover {
 
         .iframe-container iframe {
           position: absolute;
-          top: 0;
+          top: 15px;
         left: 0;
             width: 100%;
             height: 100%;
@@ -490,7 +490,10 @@ ion-side-menu .list .item:hover {
 .tabframe-container{
       display: block;
     }
-
+.bar-light{
+     box-shadow:  0 2px 4px 0px rgba(0,0,0,0.1);
+      height: 55px !important;
+   }
 /* Mostrar la barra de tabs solo en pantallas de hasta 768px */
 @media (max-width: 850px) {
     .tabs-striped {
@@ -505,19 +508,33 @@ ion-side-menu .list .item:hover {
   .content {
   grid-template-columns: 100% 0 !important;
   }
+     #chatFrame{
+   height: 83vh !important;
+}
 }
 
 @media (min-width: 850px) {
-  .menubtn{
+.menubtn{
     display: none;
   }
-    .hintMsg{
+ .hintMsg{
         display: none;
     }
-  ion-side-menu .list .item {
-  font-size: 15px;
-  }
+
+
+    /*
+     #chatFrame{
+  margin-top: -20px;
 }
+.left-content {
+  margin-top: 15px !important;
+}*/
+    
+ /* ion-side-menu .list .item {
+  font-size: 15px;
+  } */
+}
+     
 
 @keyframes pulse {
   0% {
@@ -536,12 +553,12 @@ ion-side-menu .list .item:hover {
 }
 
 .pulseTab {
-  animation: pulse 1s ease-in-out 3;
+  animation: pulse 1s ease-in-out 5;
 }
 
 .hintMsg {
   position: fixed;
-  bottom: 70px; /* Just above the tab bar */
+  bottom: 100px; /* Just above the tab bar */
   left: 50%;
   transform: translateX(-50%);
  /* background-color: rgba(0, 0, 0, 0.8);
@@ -552,7 +569,7 @@ ion-side-menu .list .item:hover {
   border-radius: 8px;
   font-size: 14px;
   z-index: 1000;
-  animation: fadeInOut 4s forwards;
+  animation: fadeInOut 5s forwards;
 }
 
 @keyframes fadeInOut {
@@ -575,22 +592,28 @@ ion-side-menu .list .item:hover {
 }
      
 
-.profile-user-data > * {float: left; margin-left: 5px;}
- .profile-user-data   .circle {
+.profile-user-data {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  margin-bottom: 10px;
+}
+.profile-user-data .circle {
+    flex-shrink: 0; /* Evita que el contenedor de la imagen se reduzca */
     border-radius: 100% !important;
     overflow: hidden; 
     width: 55px;
     height: 55px;
-   margin-top: 20px;
-   margin-right: 10px;
-     margin-left: 15px;
+    margin: 10px 2px 0 10px; /* Ajusta los márgenes */
 }
 .profile-user-data img { margin-right: 10px; max-width: 100%;}
-.profile-user-data .main-data {padding: 10px 0 20px; margin-bottom: 15px;  }
-.main-data h4{
-  font-size: 13px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+.profile-user-data .main-data {
+    flex-grow: 1; /* Permite que el contenedor de texto use el espacio restante */
+    padding: 10px 10px 20px;
+    margin-bottom: 5px;
+    overflow: hidden; /* Evita desbordamientos */
 }
+
 .main-data .planTag{
   color: #77777a; 
   font-size: 12px;
@@ -600,12 +623,18 @@ ion-side-menu .list .item:hover {
   margin-top: 1px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
-.profile-user-data .main-data h4 {margin: 0; font-size: 17px; font-weight: }
+.main-data h4 {
+    font-size: 17px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+margin-bottom: 1px;
+    overflow: hidden; 
+}
 .profile-user-data .main-data span {font-size: 12px;}
 
 
 .progress{
  height: 12px;
+width: 155px;
   margin-top: 5px;
   margin-bottom: -10px;
 }
@@ -673,11 +702,15 @@ ion-side-menu .list .item:hover {
   font-size: 18px;
 }
 
+ #chatFrame{
+     height: 90vh;
+}
+     
 .content {
   display: grid;
-  grid-template-columns: auto 270px; /* Deja que el lado izquierdo sea flexible */
-  height: 100vh;
-}
+  grid-template-columns: auto 330px; /* Deja que el lado izquierdo sea flexible */
+  height: 92.5vh;
+}   
 
 .left-content {
   overflow-y: auto; /* Permite scroll si el contenido es más grande */
@@ -688,14 +721,44 @@ ion-side-menu .list .item:hover {
   background-color: white;
   display: flex;
   flex-direction: column;
-   box-shadow: -1px 0 2px rgba(0, 0, 0, 0.3); 
+  border: 1px solid #e1e8ed;
   height: 100vh;
   overflow-y: auto;
   position: fixed; 
   right: 0;
-  width: 270px; 
+    top: 15px;
+  width: 330px; 
 }
+       
 
+
+  .barImage:before {
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 50px;
+    top: -5px;
+    left: -2.6px;
+    border-radius: 50%;
+    border: 1px solid silver;
+    animation: 1.5s linear 0s normal none infinite focuse;
+}
+   
+   @keyframes focuse {
+  0% {
+    transform: scale(0.8);
+    opacity: 1; }
+  75% {
+    transform: scale(1.2);
+    opacity: 0; }
+  100% {
+    transform: scale(1.2);
+    opacity: 0; } }
+@keyframes slide {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 40px 0; } }
      
 </style>
 
@@ -719,12 +782,12 @@ ion-side-menu .list .item:hover {
     
  <script id="menu.html" type="text/ng-template">
     <ion-side-menus >
-      <ion-side-menu side="left" width='240'  expose-aside-when="large">
+      <ion-side-menu side="left" width='280'  expose-aside-when="large">
          
         <ion-content>
 
       <div class="profile-user-data clearfix">
-        <div id="loadingProfile" ng-if="loadingProfile"></div>
+        <div id="loadingProfile" ng-if="loadingProfile" style="margin-top: 20px !important;"></div>
           <div class="circle">
               <img class="profile-pic" src="{{userData.photo}}">
           </div>
@@ -746,13 +809,13 @@ ion-side-menu .list .item:hover {
           </div>  
         </div>
      
-          <ul class="list">
-           <a href="#/menu/materias" class="item" ng-class="(activeMenuClr=='materias')?'menuSelectedColor':''" ng-click="activeMenuClr = 'materias'" menu-toggle="left"><i class="ri-presentation-line" ></i>&nbsp&nbspInicio</a> 
-<a href="#/menu/agenda" class="item" ng-class="(activeMenuClr=='agenda')?'menuSelectedColor':''" ng-click="activeMenuClr = 'agenda'" menu-toggle="left"><i class="ri-calendar-todo-line"></i>&nbsp&nbspAgenda</a> 
-                           <a href="#/menu/library" class="item" ng-class="(activeMenuClr=='library')?'menuSelectedColor':''" ng-click="activeMenuClr = 'library'" menu-toggle="left"><i class="ri-book-shelf-line" ></i>&nbsp&nbspBiblioteca</a>
-                              
-       <a href="#/menu/reel/achievements" class="item" ng-class="(activeMenuClr=='reel')?'menuSelectedColor':''" ng-click="activeMenuClr = 'reel'" menu-toggle="left"><i class="ri-trophy-line" ></i>&nbsp&nbspLogros</a>   
+ <ul class="list">
+           <a href="#/menu/courses" class="item" ng-class="(activeMenuClr=='courses')?'menuSelectedColor':''" ng-click="activeMenuClr = 'courses'" menu-toggle="left"><i class="ri-presentation-line" ></i>&nbsp&nbspInicio</a> 
+                           <a href="#/menu/estadisticas" class="item" ng-class="(activeMenuClr=='estadisticas')?'menuSelectedColor':''" ng-click="activeMenuClr = 'estadisticas'" menu-toggle="left"><i class="ri-pie-chart-line" ></i>&nbsp&nbspEstadísticas</a>
+       <a href="#/menu/reel/achievements" class="item" ng-class="(activeMenuClr=='reel')?'menuSelectedColor':''" ng-click="activeMenuClr = 'reel'" menu-toggle="left"><i class="ri-user-community-line"></i></i>&nbsp&nbspForo</a>    
+       <a href="#/menu/simulador" class="item" ng-class="(activeMenuClr=='simulador')?'menuSelectedColor':''" ng-click="activeMenuClr = 'simulador'" menu-toggle="left"><i class="ri-list-check-3"></i>&nbsp&nbspSimulador</a> 
           </ul>
+
      
         </ion-content>
  <ion-footer-bar style="z-index: 999 !important;">
@@ -772,238 +835,6 @@ ion-side-menu .list .item:hover {
 
 
 
-
- <script id="agenda.html" type="text/ng-template">
-    <ion-view >
-      
-     <ion-nav-bar class="bar-light" >      
-        <ion-nav-buttons side="right">
-
-       <button class="button button-clear" ng-click="toggleDropdown()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 10px;">
-      <img src="{{userData.photo}}" width="35" height="35" style="border-radius: 50%;" />
-  <div style="position: absolute; bottom: -5px; left: 25px; width: 15px; height: 15px; background-color: #d3d3d3; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
-        <i class="icon ion-chevron-down" style="font-size: 8px; color: black; transform: scale(0.27);"></i>
-    </div>
-    </button>
-  </ion-nav-buttons>
-       
-        <ion-nav-buttons side="left">
-          <button class="button button-clear menubtn" ng-click="toggleRight()"><i class="button button-icon ion-navicon"></i>menu</button>
-        </ion-nav-buttons>   
-       
-        <div class="dropdownContent" ng-show="isDropdownVisible" ng-click="$event.stopPropagation()">
-     <div id="bannerRow">
-      <div class="profileImageContainer">
-        <img src="{{userData.photo}}"  />
-      </div>
-      <p class="profileName">{{userData.name}}</p>
-      <p class="profileEmail">{{userData.mail}}</p>
-    </div>
-    <div class="dropdown-item" ng-click="goToStatus()">
-      <i class="ion-ios-contact-outline"></i> Perfil
-    </div>
-  <div class="dropdown-item" ng-click="goToStatus()">
-      <i class="ion-card"></i> Pagos
-    </div>
-     <div class="dropdown-item" ng-click="goToChat()">
-      <i class="ion-ios-chatboxes-outline"></i> Tutoría
-    </div>
-  </div>
-        
-    </ion-nav-bar>
-
-
-
-
-    
-      <ion-content>
-   <section class="content">
-      <div class="left-content">
-       <div class="iframe-container"><iframe id="agendaFrame" src="https://app.mozartacademy.mx/agenda" frameborder="0" allowfullscreen></iframe></div>
-        </div>
-
-
-        <div class="right-content " >
-  <div class="list">
-  
-          <ion-list > 
-    <div ng-if="userData.status != 'ACTIVO'">
-      <ion-item class="item-divider itemDividerforitem" >
-    Asistencias
-        </ion-item>
-      <ion-item class="item-icon-left">
-         <i class="icon ri-currency-fill" ></i>
-       Plan de pago
-        <p style="color: red">Pago pendiente </p>  
-          </ion-item>
-                 <ion-item class="item-icon-left item-icon-right" >
-<i class="icon ri-calendar-schedule-fill" ></i> Próximo pago
-         <p style="color: red">{{userData.nextpay}} </p>  
-          <i class="icon ri-arrow-left-double-fill slide-hint-left" style="margin-top: 35px;"></i>
-            <ion-option-button class="button-balanced"  onclick="window.top.location.href='https://app.mozartacademy.mx/main#/menu/payment';">Pagar</ion-option-button>
-                </ion-item>
-       </div>  
-
- <div ng-if="userData.status == 'ACTIVO'">           
-             <ion-item class="item-divider itemDividerforitem" >
-    Asistencias
-        </ion-item>
-            <ion-item class="item-icon-left" >
-      <i class="icon ri-calendar-event-fill" ></i> Horario de clase
-        <p>{{userData.classtime[0]}} <br> {{userData.classtime[1]}}</p>   
-        </ion-item>
-      <ion-item class="item-icon-left item-button-right">
-        <i class="icon ri-calendar-close-fill" ></i> Reposiciones
-         <button class="button button-dark" style="transform: scale(.8); margin-right: -5px; margin-top: 10px;" ng-click="showAlert()">
-            solicitar           
-          </button>
-         <p style="font-size: 10px;">Agenda con anticipación</p>    
-          </ion-item>
-           </div> 
-     </ion-list>   
-   
-   
-   
-    <!--  <ion-list ng-if="userData.status == 'ACTIVO' && userData.format == 'En línea por ZOOM'"> -->
-   <ion-list >
-             <ion-item class="item-divider itemDividerforitem">
-    Contacto
-        </ion-item>
-
- <ion-item class="item-icon-left item-icon-right">
-    <i class="icon ri-video-chat-fill" style="color: blue; "></i> Datos de ZOOM
-    <p> ID: 296 313 4430<br> Password: bartok</p> 
-     <i class="icon ri-arrow-left-double-fill slide-hint-left" style="margin-top: 50px;"></i>
-            <ion-option-button class="button-positive"  onclick="window.top.location.href='window.location.href='https://us02web.zoom.us/j/2963134430?pwd=Vzk3aTFCSTdDSFBoK1c1SVh4eEwwZz09';">Ingresar</ion-option-button>
-          </ion-item>
-   
-   
-          <ion-item class="item-icon-left item-icon-right">
-    <i class="icon ri-whatsapp-fill" style="color: green;"></i> Prof. Daniel
-         <p > 56 2736 2997</p> 
-      <i class="icon ri-arrow-left-double-fill slide-hint-left" style="margin-top: 35px;"></i>
-            <ion-option-button class="button-balanced"  onclick="window.top.location.href='window.location.href='https://wa.me/525627362997';">Contactar</ion-option-button>
-          </ion-item>
-
-   
-     <ion-item class="item-divider itemDividerforitem">
-   Bajas
-        </ion-item>
-      <ion-item class="item-icon-left item-icon-right">
-        <i class="icon ri-close-circle-fill" style="color: red;"></i> Baja temporal
-      
-         <p style="font-size: 10px;">Expón el motivo de tu baja </p> 
-    <i class="icon ri-arrow-left-double-fill slide-hint-left" style="margin-top: 35px;" ng-if="userData.status != 'ACTIVO'"></i>
-   <ion-option-button class="button-assertive"  ng-click="showAlert2()">Solicitar</ion-option-button>
-          </ion-item>
-   </ion-list>
-
-
-         </div>
-  </div>
- </section>
-      </ion-content>
-    </ion-view>
-
-  </script>
-
-
-
-
- <script id="attendance.html" type="text/ng-template">
-    <ion-view >
-
-       <ion-nav-bar class="bar-light" >     
-       <ion-nav-buttons side="left">
-    <button class="button button-clear" ng-click="goToAgenda()">
-      <i class="ri-arrow-left-s-line"></i> regresar
-    </button>
-  </ion-nav-buttons>  
-    </ion-nav-bar>
-
-      <ion-content>
-
-
-  <div class="list">
-  
-          <ion-list > 
-    <div ng-if="userData.status != 'ACTIVO'">
-      <ion-item class="item-divider itemDividerforitem" >
-    Asistencias
-        </ion-item>
-      <ion-item class="item-icon-left">
-         <i class="icon ri-currency-fill" ></i>
-       Plan de pago
-        <p style="color: red">Pago pendiente </p>  
-          </ion-item>
-                 <ion-item class="item-icon-left item-icon-right" >
-<i class="icon ri-calendar-schedule-fill" ></i> Próximo pago
-         <p style="color: red">{{userData.nextpay}} </p>  
-          <i class="icon ri-arrow-left-double-fill slide-hint-left" style="margin-top: 35px;"></i>
-            <ion-option-button class="button-balanced"  onclick="window.top.location.href='https://app.mozartacademy.mx/main#/menu/payment';">Pagar</ion-option-button>
-                </ion-item>
-       </div>  
-
- <div ng-if="userData.status == 'ACTIVO'">           
-             <ion-item class="item-divider itemDividerforitem" >
-    Asistencias
-        </ion-item>
-            <ion-item class="item-icon-left" >
-      <i class="icon ri-calendar-event-fill" ></i> Horario de clase
-        <p>{{userData.classtime[0]}} <br> {{userData.classtime[1]}}</p>   
-        </ion-item>
-      <ion-item class="item-icon-left item-button-right">
-        <i class="icon ri-calendar-close-fill" ></i> Reposiciones
-         <button class="button button-dark" style="transform: scale(.8); margin-right: -5px; margin-top: 10px;" ng-click="showAlert()">
-            solicitar           
-          </button>
-         <p style="font-size: 10px;">Agenda con anticipación</p>    
-          </ion-item>
-           </div> 
-     </ion-list>   
-   
-   
-   
-    <!--  <ion-list ng-if="userData.status == 'ACTIVO' && userData.format == 'En línea por ZOOM'"> -->
-   <ion-list >
-             <ion-item class="item-divider itemDividerforitem">
-    Contacto
-        </ion-item>
-
- <ion-item class="item-icon-left item-icon-right">
-    <i class="icon ri-video-chat-fill" style="color: blue; "></i> Datos de ZOOM
-    <p> ID: 296 313 4430<br> Password: bartok</p> 
-     <i class="icon ri-arrow-left-double-fill slide-hint-left" style="margin-top: 50px;"></i>
-            <ion-option-button class="button-positive"  onclick="window.top.location.href='window.location.href='https://us02web.zoom.us/j/2963134430?pwd=Vzk3aTFCSTdDSFBoK1c1SVh4eEwwZz09';">Ingresar</ion-option-button>
-          </ion-item>
-   
-   
-          <ion-item class="item-icon-left item-icon-right">
-    <i class="icon ri-whatsapp-fill" style="color: green;"></i> Prof. Daniel
-         <p > 56 2736 2997</p> 
-      <i class="icon ri-arrow-left-double-fill slide-hint-left" style="margin-top: 35px;"></i>
-            <ion-option-button class="button-balanced"  onclick="window.top.location.href='window.location.href='https://wa.me/525627362997';">Contactar</ion-option-button>
-          </ion-item>
-
-   
-     <ion-item class="item-divider itemDividerforitem">
-   Bajas
-        </ion-item>
-      <ion-item class="item-icon-left item-icon-right">
-        <i class="icon ri-close-circle-fill" style="color: red;"></i> Baja temporal
-      
-         <p style="font-size: 10px;">Expón el motivo de tu baja </p> 
-    <i class="icon ri-arrow-left-double-fill slide-hint-left" style="margin-top: 35px;" ng-if="userData.status != 'ACTIVO'"></i>
-   <ion-option-button class="button-assertive"  ng-click="showAlert2()">Solicitar</ion-option-button>
-          </ion-item>
-   </ion-list>
-
-
-         </div>
-
-      </ion-content>
-    </ion-view>
-  </script>
 
 
 
@@ -1028,26 +859,6 @@ ion-side-menu .list .item:hover {
     </ion-view>
   </script>
 
-
-          
-    <script id="flashcardMath.html" type="text/ng-template">
-    <ion-view >
-      
-     <ion-nav-bar class="bar-light" >     
-       <ion-nav-buttons side="left">
-    <button class="button button-clear" ng-click="goToMain()">
-      <i class="ri-arrow-left-s-line"></i> regresar
-    </button>
-  </ion-nav-buttons>  
-    </ion-nav-bar>
-      
-      <ion-content > 
-
-
-        <div class="iframe-container"><iframe id="profileFrame" src="https://sergioabv2.github.io/admisionunam/courses/math" frameborder="0" allowfullscreen></iframe></div>   
-      </ion-content>
-    </ion-view>
-  </script>
 
 
   <script id="status.html" type="text/ng-template">
@@ -1108,7 +919,7 @@ ion-side-menu .list .item:hover {
 
       
 
-        <script id="materias.html" type="text/ng-template">
+        <script id="courses.html" type="text/ng-template">
     <ion-view >
 
       <ion-nav-bar class="bar-light" >      
@@ -1128,8 +939,8 @@ ion-side-menu .list .item:hover {
     </div> 
 </button>
 
-       <button class="button button-clear" ng-click="toggleDropdown()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 10px;">
-      <img src="{{userData.photo}}" width="35" height="35" style="border-radius: 50%;" />
+       <button class="button button-clear" ng-class="{ 'barImage': btnBar }" ng-click="toggleDropdown()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 10px;">
+      <img src="{{userData.photo}}" width="40" height="40" style="border-radius: 50%;" />
   <div style="position: absolute; bottom: -5px; left: 25px; width: 15px; height: 15px; background-color: #d3d3d3; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
         <i class="icon ion-chevron-down" style="font-size: 8px; color: black; transform: scale(0.27);"></i>
     </div>
@@ -1187,7 +998,7 @@ ion-side-menu .list .item:hover {
     </ion-nav-bar>
 
      <ion-content>
-   <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/courses/" frameborder="0" allowfullscreen></iframe></div>
+   <div class="iframe-container"><iframe src="https://app.mozartacademy.mx/courses" frameborder="0" allowfullscreen></iframe></div>
       </ion-content>
 
   <div id="myModal" class="modal" ng-show="isModalVisible">
@@ -1219,8 +1030,22 @@ ion-side-menu .list .item:hover {
         <ion-nav-bar class="bar-light" >      
         <ion-nav-buttons side="right">
 
-       <button class="button button-clear" ng-click="toggleDropdown()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 10px;">
-      <img src="{{userData.photo}}" width="35" height="35" style="border-radius: 50%;" />
+     <button class="button button-clear" ng-click="dropdownChat()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 18px;">
+<i class="ri-question-answer-line"></i>
+            <div style="position: absolute; top: -3px; left: 18px; width: 18px; height: 18px; background-color: red; border-radius: 50%; display: flex; justify-content: center; align-items: center;" ng-if="(chats | filter:{read: false}).length && chatCounter">
+        <div style="font-size: 13px; color: white;"> {{(chats | filter:{read: false}).length}}</div>
+    </div>
+</button> 
+          
+     <button class="button button-clear" ng-click="dropdownNotif()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 25px;">
+  <i class="ri-notification-3-line" ></i>
+            <div style="position: absolute; top: -3px; left: 18px; width: 18px; height: 18px; background-color: red; border-radius: 50%; display: flex; justify-content: center; align-items: center;" ng-if="(alerts | filter:{seen: false}).length && alertCounter">
+        <div style="font-size: 13px; color: white;" > {{(alerts | filter:{seen: false}).length}}</div>
+    </div> 
+</button>
+
+       <button class="button button-clear" ng-class="{ 'barImage': btnBar }" ng-click="toggleDropdown()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 10px;">
+      <img src="{{userData.photo}}" width="40" height="40" style="border-radius: 50%;" />
   <div style="position: absolute; bottom: -5px; left: 25px; width: 15px; height: 15px; background-color: #d3d3d3; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
         <i class="icon ion-chevron-down" style="font-size: 8px; color: black; transform: scale(0.27);"></i>
     </div>
@@ -1229,12 +1054,15 @@ ion-side-menu .list .item:hover {
        
         <ion-nav-buttons side="left">
           <button class="button button-clear menubtn" ng-click="toggleRight()"><i class="button button-icon ion-navicon"></i>menu</button>
-        </ion-nav-buttons>   
+        </ion-nav-buttons>  
+
+            
        
         <div class="dropdownContent" ng-show="isDropdownVisible" ng-click="$event.stopPropagation()">
      <div id="bannerRow">
       <div class="profileImageContainer">
-        <img src="{{userData.photo}}"  />
+     <div id="loading" ng-if="loadingProfile" style="height: 60px;"></div>
+        <img src="{{userData.photo}}"  ng-if="!loadingProfile"/>
       </div>
       <p class="profileName">{{userData.name}}</p>
       <p class="profileEmail">{{userData.mail}}</p>
@@ -1242,13 +1070,35 @@ ion-side-menu .list .item:hover {
     <div class="dropdown-item" ng-click="goToStatus()">
       <i class="ion-ios-contact-outline"></i> Perfil
     </div>
-           <div class="dropdown-item" ng-click="goToStatus()">
+             <div class="dropdown-item" ng-click="goToStatus()">
       <i class="ion-card"></i> Pagos
     </div>
-     <div class="dropdown-item" ng-click="goToChat()">
+    <div class="dropdown-item" ng-click="goToChat()">
       <i class="ion-ios-chatboxes-outline"></i> Tutoría
     </div>
-  </div> 
+  </div>
+
+    <div class="dropdownContent" ng-show="dropdownChatVisible" ng-click="$event.stopPropagation()">
+  <div class="dropdown-item" 
+       ng-click="goToChat()" 
+       ng-if="(chats | filter:{read: false}).length > 0">
+    <i class="ri-feedback-line alertIcon"></i>
+    Tienes {{(chats | filter:{read: false}).length}} nuevos mensajes  
+  </div>
+  <span style="margin-left: 15px;" 
+        ng-if="(chats | filter:{read: false}).length == 0" ng-click="goToChat()"> 
+    No hay mensajes 
+  </span>
+</div>
+
+
+<div class="dropdownContent" ng-show="dropdownNotifVisible" ng-click="$event.stopPropagation()">
+   <div class="dropdown-item" ng-repeat="alert in alerts" style="color: {{alert.color}}">
+      <i class="{{alert.icon}} alertIcon" ></i> {{alert.subject}} 
+         <div style="font-size: 10px; position: absolute; margin-top: 30px;  color: gray;">Hace {{calculateDaysAgo(alert.date)}} días</div>
+    </div> 
+      <span style="margin-left: 15px;" ng-if="alerts.length == 0"> No hay alertas </span>
+  </div>  
         
     </ion-nav-bar>
 
@@ -1306,10 +1156,10 @@ ion-side-menu .list .item:hover {
     
 <div class="hintMsg"><i class="ri-information-2-line" style="font-size: 20px;"></i> Explora más funciones</div>
     <ion-tabs class="tabs-striped tabs-icon-top tabs-stable ">
-      <ion-tab title="Lecciones" icon="ri-graduation-cap-fill" href="#/menu/tab/theory" class="pulseTab">
+      <ion-tab title="Lecciones" icon="ri-graduation-cap-fill" href="#/menu/tab/theory" >
         <ion-nav-view name="theory-tab"></ion-nav-view>
       </ion-tab>
-      <ion-tab title="Evaluación" icon="ri-aed-fill" href="#/menu/tab/practice">
+      <ion-tab title="Evaluación" icon="ri-aed-fill" href="#/menu/tab/practice" class="pulseTab">
         <ion-nav-view name="practice-tab"></ion-nav-view>
       </ion-tab>
     </ion-tabs>
@@ -1340,6 +1190,156 @@ ion-side-menu .list .item:hover {
   </ion-view> 
 </script>
 
+
+
+  <script id="matematicas.html" type="text/ng-template">
+    <ion-view>
+     <ion-nav-bar class="bar-light">
+      <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="goToMain()">
+          <i class="ri-arrow-left-s-line"></i> regresar
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+      <ion-content>
+        <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/courses/matematicas" frameborder="0" allowfullscreen ></iframe></div> 
+      </ion-content>
+    </ion-view>
+  </script>
+
+
+
+        <script id="espanol.html" type="text/ng-template">
+    <ion-view>
+     <ion-nav-bar class="bar-light">
+      <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="goToMain()">
+          <i class="ri-arrow-left-s-line"></i> regresar
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+      <ion-content>
+        <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/courses/espanol" frameborder="0" allowfullscreen ></iframe></div> 
+      </ion-content>
+    </ion-view>
+  </script>
+
+        <script id="fisica.html" type="text/ng-template">
+    <ion-view>
+     <ion-nav-bar class="bar-light">
+      <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="goToMain()">
+          <i class="ri-arrow-left-s-line"></i> regresar
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+      <ion-content>
+        <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/courses/fisica" frameborder="0" allowfullscreen ></iframe></div> 
+      </ion-content>
+    </ion-view>
+  </script>
+
+
+        <script id="quimica.html" type="text/ng-template">
+    <ion-view>
+     <ion-nav-bar class="bar-light">
+      <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="goToMain()">
+          <i class="ri-arrow-left-s-line"></i> regresar
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+      <ion-content>
+        <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/courses/quimica" frameborder="0" allowfullscreen ></iframe></div> 
+      </ion-content>
+    </ion-view>
+  </script>
+    
+
+
+        <script id="biologia.html" type="text/ng-template">
+    <ion-view>
+     <ion-nav-bar class="bar-light">
+      <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="goToMain()">
+          <i class="ri-arrow-left-s-line"></i> regresar
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+      <ion-content>
+        <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/courses/biologia" frameborder="0" allowfullscreen ></iframe></div> 
+      </ion-content>
+    </ion-view>
+  </script>
+    
+
+
+        <script id="historiaU.html" type="text/ng-template">
+    <ion-view>
+     <ion-nav-bar class="bar-light">
+      <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="goToMain()">
+          <i class="ri-arrow-left-s-line"></i> regresar
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+      <ion-content>
+        <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/courses/historiaU" frameborder="0" allowfullscreen ></iframe></div> 
+      </ion-content>
+    </ion-view>
+  </script>
+
+
+      <script id="historiaM.html" type="text/ng-template">
+    <ion-view>
+     <ion-nav-bar class="bar-light">
+      <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="goToMain()">
+          <i class="ri-arrow-left-s-line"></i> regresar
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+      <ion-content>
+        <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/courses/historiaM" frameborder="0" allowfullscreen ></iframe></div> 
+      </ion-content>
+    </ion-view>
+  </script>
+
+
+
+      <script id="geografia.html" type="text/ng-template">
+    <ion-view>
+     <ion-nav-bar class="bar-light">
+      <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="goToMain()">
+          <i class="ri-arrow-left-s-line"></i> regresar
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+      <ion-content>
+        <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/courses/geografia" frameborder="0" allowfullscreen ></iframe></div> 
+      </ion-content>
+    </ion-view>
+  </script>
+
+
+
+      <script id="literatura.html" type="text/ng-template">
+    <ion-view>
+     <ion-nav-bar class="bar-light">
+      <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="goToMain()">
+          <i class="ri-arrow-left-s-line"></i> regresar
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+      <ion-content>
+        <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/courses/literatura" frameborder="0" allowfullscreen ></iframe></div> 
+      </ion-content>
+    </ion-view>
+  </script>
+
+    
     
         <script id="chat.html" type="text/ng-template">
     <ion-view >
@@ -1353,7 +1353,16 @@ ion-side-menu .list .item:hover {
     </ion-nav-bar>
     
       <ion-content>
-        <div class="iframe-container"><iframe src="https://app.mozartacademy.mx/chat2" frameborder="0" allowfullscreen ></iframe></div> 
+ <section class="content" style="grid-template-columns: auto 360px; !important;">
+      <div class="left-content" >
+       <div class="iframe-container"><iframe id="chatFrame" src="https://app.mozartacademy.mx/chat2" frameborder="0" allowfullscreen></iframe></div>
+      </div>
+
+      <div class="right-content" style="width: 360px !important;">
+         <div class="iframe-container"><iframe src="https://app.mozartacademy.mx/profile" frameborder="0" allowfullscreen></iframe></div>
+      </div>
+ </section>
+
       </ion-content>
     </ion-view>
   </script>
@@ -1378,14 +1387,28 @@ ion-side-menu .list .item:hover {
 
 
     
-   <script id="library.html" type="text/ng-template">
+   <script id="estadisticas.html" type="text/ng-template">
     <ion-view >
 
       <ion-nav-bar class="bar-light" >      
         <ion-nav-buttons side="right">
 
-       <button class="button button-clear" ng-click="toggleDropdown()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 10px;">
-      <img src="{{userData.photo}}" width="35" height="35" style="border-radius: 50%;" />
+     <button class="button button-clear" ng-click="dropdownChat()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 18px;">
+<i class="ri-question-answer-line"></i>
+            <div style="position: absolute; top: -3px; left: 18px; width: 18px; height: 18px; background-color: red; border-radius: 50%; display: flex; justify-content: center; align-items: center;" ng-if="(chats | filter:{read: false}).length && chatCounter">
+        <div style="font-size: 13px; color: white;"> {{(chats | filter:{read: false}).length}}</div>
+    </div>
+</button> 
+          
+     <button class="button button-clear" ng-click="dropdownNotif()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 25px;">
+  <i class="ri-notification-3-line" ></i>
+            <div style="position: absolute; top: -3px; left: 18px; width: 18px; height: 18px; background-color: red; border-radius: 50%; display: flex; justify-content: center; align-items: center;" ng-if="(alerts | filter:{seen: false}).length && alertCounter">
+        <div style="font-size: 13px; color: white;" > {{(alerts | filter:{seen: false}).length}}</div>
+    </div> 
+</button>
+
+       <button class="button button-clear" ng-class="{ 'barImage': btnBar }" ng-click="toggleDropdown()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 10px;">
+      <img src="{{userData.photo}}" width="40" height="40" style="border-radius: 50%;" />
   <div style="position: absolute; bottom: -5px; left: 25px; width: 15px; height: 15px; background-color: #d3d3d3; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
         <i class="icon ion-chevron-down" style="font-size: 8px; color: black; transform: scale(0.27);"></i>
     </div>
@@ -1394,12 +1417,15 @@ ion-side-menu .list .item:hover {
        
         <ion-nav-buttons side="left">
           <button class="button button-clear menubtn" ng-click="toggleRight()"><i class="button button-icon ion-navicon"></i>menu</button>
-        </ion-nav-buttons>   
+        </ion-nav-buttons>  
+
+            
        
         <div class="dropdownContent" ng-show="isDropdownVisible" ng-click="$event.stopPropagation()">
      <div id="bannerRow">
       <div class="profileImageContainer">
-        <img src="{{userData.photo}}"  />
+     <div id="loading" ng-if="loadingProfile" style="height: 60px;"></div>
+        <img src="{{userData.photo}}"  ng-if="!loadingProfile"/>
       </div>
       <p class="profileName">{{userData.name}}</p>
       <p class="profileEmail">{{userData.mail}}</p>
@@ -1407,19 +1433,41 @@ ion-side-menu .list .item:hover {
     <div class="dropdown-item" ng-click="goToStatus()">
       <i class="ion-ios-contact-outline"></i> Perfil
     </div>
-        <div class="dropdown-item" ng-click="goToStatus()">
+             <div class="dropdown-item" ng-click="goToStatus()">
       <i class="ion-card"></i> Pagos
     </div>
     <div class="dropdown-item" ng-click="goToChat()">
       <i class="ion-ios-chatboxes-outline"></i> Tutoría
-    </div>       
+    </div>
   </div>
+
+    <div class="dropdownContent" ng-show="dropdownChatVisible" ng-click="$event.stopPropagation()">
+  <div class="dropdown-item" 
+       ng-click="goToChat()" 
+       ng-if="(chats | filter:{read: false}).length > 0">
+    <i class="ri-feedback-line alertIcon"></i>
+    Tienes {{(chats | filter:{read: false}).length}} nuevos mensajes  
+  </div>
+  <span style="margin-left: 15px;" 
+        ng-if="(chats | filter:{read: false}).length == 0" ng-click="goToChat()"> 
+    No hay mensajes 
+  </span>
+</div>
+
+
+<div class="dropdownContent" ng-show="dropdownNotifVisible" ng-click="$event.stopPropagation()">
+   <div class="dropdown-item" ng-repeat="alert in alerts" style="color: {{alert.color}}">
+      <i class="{{alert.icon}} alertIcon" ></i> {{alert.subject}} 
+         <div style="font-size: 10px; position: absolute; margin-top: 30px;  color: gray;">Hace {{calculateDaysAgo(alert.date)}} días</div>
+    </div> 
+      <span style="margin-left: 15px;" ng-if="alerts.length == 0"> No hay alertas </span>
+  </div>  
         
     </ion-nav-bar>
 
 
      <ion-content>
-  <div class="iframe-container"><iframe src="https://app.mozartacademy.mx/books" frameborder="0" allowfullscreen ></iframe></div> 
+  <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/estadisticas" frameborder="0" allowfullscreen ></iframe></div> 
       </ion-content>
       
      
@@ -1430,6 +1478,93 @@ ion-side-menu .list .item:hover {
 
 
 
+
+ <script id="simulador.html" type="text/ng-template">
+    <ion-view >
+
+      <ion-nav-bar class="bar-light" >      
+        <ion-nav-buttons side="right">
+
+     <button class="button button-clear" ng-click="dropdownChat()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 18px;">
+<i class="ri-question-answer-line"></i>
+            <div style="position: absolute; top: -3px; left: 18px; width: 18px; height: 18px; background-color: red; border-radius: 50%; display: flex; justify-content: center; align-items: center;" ng-if="(chats | filter:{read: false}).length && chatCounter">
+        <div style="font-size: 13px; color: white;"> {{(chats | filter:{read: false}).length}}</div>
+    </div>
+</button> 
+          
+     <button class="button button-clear" ng-click="dropdownNotif()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 25px;">
+  <i class="ri-notification-3-line" ></i>
+            <div style="position: absolute; top: -3px; left: 18px; width: 18px; height: 18px; background-color: red; border-radius: 50%; display: flex; justify-content: center; align-items: center;" ng-if="(alerts | filter:{seen: false}).length && alertCounter">
+        <div style="font-size: 13px; color: white;" > {{(alerts | filter:{seen: false}).length}}</div>
+    </div> 
+</button>
+
+       <button class="button button-clear" ng-class="{ 'barImage': btnBar }" ng-click="toggleDropdown()" style="font-size: 18px; font-weight: 550; font-family: 'Poppins', sans-serif; margin-right: 10px;">
+      <img src="{{userData.photo}}" width="40" height="40" style="border-radius: 50%;" />
+  <div style="position: absolute; bottom: -5px; left: 25px; width: 15px; height: 15px; background-color: #d3d3d3; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+        <i class="icon ion-chevron-down" style="font-size: 8px; color: black; transform: scale(0.27);"></i>
+    </div>
+    </button>
+  </ion-nav-buttons>
+       
+        <ion-nav-buttons side="left">
+          <button class="button button-clear menubtn" ng-click="toggleRight()"><i class="button button-icon ion-navicon"></i>menu</button>
+        </ion-nav-buttons>  
+
+            
+       
+        <div class="dropdownContent" ng-show="isDropdownVisible" ng-click="$event.stopPropagation()">
+     <div id="bannerRow">
+      <div class="profileImageContainer">
+     <div id="loading" ng-if="loadingProfile" style="height: 60px;"></div>
+        <img src="{{userData.photo}}"  ng-if="!loadingProfile"/>
+      </div>
+      <p class="profileName">{{userData.name}}</p>
+      <p class="profileEmail">{{userData.mail}}</p>
+    </div>
+    <div class="dropdown-item" ng-click="goToStatus()">
+      <i class="ion-ios-contact-outline"></i> Perfil
+    </div>
+             <div class="dropdown-item" ng-click="goToStatus()">
+      <i class="ion-card"></i> Pagos
+    </div>
+    <div class="dropdown-item" ng-click="goToChat()">
+      <i class="ion-ios-chatboxes-outline"></i> Tutoría
+    </div>
+  </div>
+
+    <div class="dropdownContent" ng-show="dropdownChatVisible" ng-click="$event.stopPropagation()">
+  <div class="dropdown-item" 
+       ng-click="goToChat()" 
+       ng-if="(chats | filter:{read: false}).length > 0">
+    <i class="ri-feedback-line alertIcon"></i>
+    Tienes {{(chats | filter:{read: false}).length}} nuevos mensajes  
+  </div>
+  <span style="margin-left: 15px;" 
+        ng-if="(chats | filter:{read: false}).length == 0" ng-click="goToChat()"> 
+    No hay mensajes 
+  </span>
+</div>
+
+
+<div class="dropdownContent" ng-show="dropdownNotifVisible" ng-click="$event.stopPropagation()">
+   <div class="dropdown-item" ng-repeat="alert in alerts" style="color: {{alert.color}}">
+      <i class="{{alert.icon}} alertIcon" ></i> {{alert.subject}} 
+         <div style="font-size: 10px; position: absolute; margin-top: 30px;  color: gray;">Hace {{calculateDaysAgo(alert.date)}} días</div>
+    </div> 
+      <span style="margin-left: 15px;" ng-if="alerts.length == 0"> No hay alertas </span>
+  </div>  
+        
+    </ion-nav-bar>
+
+
+     <ion-content>
+  <div class="iframe-container"><iframe src="https://sergioabv2.github.io/admisionunam/simulador" frameborder="0" allowfullscreen ></iframe></div> 
+      </ion-content>
+      
+     
+    </ion-view>
+  </script>   
 
 
 
@@ -1534,37 +1669,13 @@ app
         }
       }
     })
-    .state('menu.agenda', {
-      url: "/agenda",
-      views: {
-        'menuContent': {
-          templateUrl: "agenda.html",
-            controller: 'agendaCtrl'
-        }
-      }
-    })
-        .state('menu.attendance', {
-      url: "/attendance",
-      views: {
-        'menuContent': {
-          templateUrl: "attendance.html",
-            controller: 'attendanceCtrl'
-        }
-      }
-    })
+
+ 
   .state('menu.profile', {
       url: "/profile",
       views: {
         'menuContent': {
           templateUrl: "profile.html"
-        }
-      }
-    })
-         .state('menu.flashcardMath', {
-      url: "/flashcardMath",
-      views: {
-        'menuContent': {
-          templateUrl: "flashcardMath.html"
         }
       }
     })
@@ -1624,11 +1735,83 @@ app
           }
         }
       })
-      .state('menu.materias', {
-      url: "/materias",
+      .state('menu.courses', {
+      url: "/courses",
       views: {
         'menuContent': {
-          templateUrl: "materias.html"
+          templateUrl: "courses.html"
+        }
+      }
+    }) 
+       .state('menu.matematicas', {
+      url: "/matematicas",
+      views: {
+        'menuContent': {
+          templateUrl: "matematicas.html"
+        }
+      }
+    })
+        .state('menu.espanol', {
+      url: "/espanol",
+      views: {
+        'menuContent': {
+          templateUrl: "espanol.html"
+        }
+      }
+    })
+        .state('menu.fisica', {
+      url: "/fisica",
+      views: {
+        'menuContent': {
+          templateUrl: "fisica.html"
+        }
+      }
+    })
+        .state('menu.quimica', {
+      url: "/quimica",
+      views: {
+        'menuContent': {
+          templateUrl: "quimica.html"
+        }
+      }
+    })
+        .state('menu.biologia', {
+      url: "/biologia",
+      views: {
+        'menuContent': {
+          templateUrl: "biologia.html"
+        }
+      }
+    })
+        .state('menu.historiaU', {
+      url: "/historiaU",
+      views: {
+        'menuContent': {
+          templateUrl: "historiaU.html"
+        }
+      }
+    })
+      .state('menu.historiaM', {
+      url: "/historiaM",
+      views: {
+        'menuContent': {
+          templateUrl: "historiaM.html"
+        }
+      }
+    })
+        .state('menu.geografia', {
+      url: "/geografia",
+      views: {
+        'menuContent': {
+          templateUrl: "geografia.html"
+        }
+      }
+    }) 
+        .state('menu.literatura', {
+      url: "/literatura",
+      views: {
+        'menuContent': {
+          templateUrl: "literatura.html"
         }
       }
     }) 
@@ -1649,21 +1832,21 @@ app
       }
     })
  
-   .state('menu.library', {
-      url: "/library",
+   .state('menu.estadisticas', {
+      url: "/estadisticas",
       views: {
         'menuContent': {
-          templateUrl: "library.html"
+          templateUrl: "estadisticas.html"
         }
       }
     })
  
    
-     .state('menu.books', {
-      url: "/books",
+     .state('menu.simulador', {
+      url: "/simulador",
       views: {
         'menuContent': {
-          templateUrl: "books.html"
+          templateUrl: "simulador.html"
         }
       }
     })
@@ -1672,7 +1855,7 @@ app
 
     ; 
 
-  $urlRouterProvider.otherwise("menu/materias");
+  $urlRouterProvider.otherwise("menu/courses");
   $ionicConfigProvider.tabs.position('bottom'); 
 })
 
@@ -1689,7 +1872,9 @@ app
             $(this).addClass('anim').css('animation-delay', (index * 0.1) + 's');
         });
     }, 10);
-    
+
+ 
+      
     $ionicSideMenuDelegate.toggleLeft();
       $scope.dropdownNotifVisible = false;
       $scope.isDropdownVisible = false;
@@ -1706,10 +1891,12 @@ app
   }) 
 
      $scope.isDropdownVisible = false;
+    $scope.btnBar = true;
     $scope.toggleDropdown = function() {
       $scope.isDropdownVisible = !$scope.isDropdownVisible;
       $scope.dropdownChatVisible = false;
       $scope.dropdownNotifVisible = false;
+        $scope.btnBar = false;
     };
     
  $scope.chatCounter = true;
@@ -1853,431 +2040,8 @@ $scope.closeModal = function () {
       
     }])
 
-   .controller('agendaCtrl', ['$scope', 'SharedState', '$ionicPopup', function($scope, SharedState, $ionicPopup){
-
-    
-  SharedState.getNum().then(function(data) {
-       $scope.userData = data.data;
-    $scope.agenda = JSON.parse(data.data.agenda);
-    $scope.userPlan = data.data.plan.split(" ")[0]
-    $scope.userPrice = data.data.plan.split(" ")[2]
-  })
-      $scope.goToPayment = function() {
-  window.location.href = '#/menu/payment';
-};
-       $scope.returnDateFormat = function(date){
-    const dat = new Date(date);
-  const options = { weekday: 'long', month: 'long', day: 'numeric' };
-    var dat2 = dat.toLocaleDateString("es-mx",options).replace(",","");
-    return dat2.charAt(0).toUpperCase() + dat2.slice(1);
-  }
-     $scope.attendanceFilter = function(item) {
-  return item.attendance == ''; 
-};
 
 
-  $scope.selectedOption = null; 
-$scope.showAlert = function() {
-  var myPopup = $ionicPopup.show({
-    template: `
-     <div ng-if="!showSummary">
-     <label >Fecha de falta</label>
-      <select ng-model="popupData.selectedOption" class="custom-select">
-        <option ng-repeat="data in agenda | filter: attendanceFilter" value="{{data}}"> 
-          {{returnDateFormat(data.start)}}
-        </option>
-      </select>
-       <label ng-if="popupData.selectedOption">¿Cómo vas a reponer?</label>
-     <select ng-model="popupData.selectedOption2" class="custom-select" ng-if="popupData.selectedOption">
-      <option value="opc2" > 
-          Tomaré la reposición en otro horario de clase
-        </option>
-     <option value="opc1" > 
-       Tomaré 2 horas seguidas la siguiente semana en mi horario de clase
-        </option>
-      </select>
-      
-   <div ng-if="popupData.selectedOption2 === 'opc2'">
-        <label class="item item-input">
-          Fecha
-          <input type="date" ng-model="popupData.selectedDate" ng-change="updateAvailableTimes()">
-        </label>
-
-        <label class="item item-input" ng-if="popupData.availableTimes.length > 0">
-          Hora
-          <span>{{ selectedTime }}</span>
-        <select ng-model="popupData.selectedTime" class="custom-select2">
-        <option ng-repeat="time in popupData.availableTimes" value="{{time}}">
-          {{time}}
-        </option>
-      </select>
-        </label>
-      </div>
-       </div>  
-       
-      <div ng-if="showSummary">
-        <p><strong>Fecha de reposición:</strong><br> {{popupData.selectedDate | date: 'fullDate'}}</p>
-        <p><strong>Hora de inicio:</strong><br> {{popupData.selectedTime}}</p>
-      </div>
-     
-    `,
-    title: 'Agenda la reposición de tu clase',
-    scope: $scope,
-    buttons: [
-     { 
-        text: 'Cancelar',
-        onTap: function() {
-          $scope.popupData.selectedOption = null; 
-          $scope.popupData.selectedOption2 = null; 
-           $scope.popupData.selectedDate = null; 
-           $scope.popupData.selectedTime = null; 
-          $scope.showSummary = false;
-        }
-      },
-      {
-        text: '<b>Continuar</b> ',
-        type: 'button-positive',
-        onTap: function(e) {
-           if (!$scope.showSummary) {
-            if (!$scope.popupData.selectedDate || !$scope.popupData.selectedTime) {
-              e.preventDefault()
-              if ($scope.popupData.selectedOption2 === 'opc1') {
-                $scope.showSummary = true;
-                var dat = JSON.parse($scope.popupData.selectedOption)
-                var nextClass = new Date(dat.start)
-                nextClass.setDate(nextClass.getDate() + 7);
-                nextClass.setHours(nextClass.getHours() + 6);
-                $scope.popupData.selectedDate = nextClass
-                $scope.popupData.selectedTime = nextClass.getHours()+':00 Hrs'
-              } else if ($scope.popupData.selectedOption2 === 'opc2' && !$scope.popupData.selectedTime) {
-                alert("Ingresa una fecha válida")
-              }  
-            } else { 
-              $scope.showSummary = true;
-              e.preventDefault(); 
-            }
-          } else {
-            return $scope.popupData;
-          }
-        }
-      }
-    ]
-  }); 
-
-  myPopup.then(function(res) {
-    if (res) {
-      $scope.popupData.selectedOption = null; 
-          $scope.popupData.selectedOption2 = null; 
-           $scope.popupData.selectedDate = null; 
-           $scope.popupData.selectedTime = null; 
-          $scope.showSummary = false;
-      alert("Reposición agendada")
-     // alert($scope.userData.name);
-    }
-  });
-}; 
- 
-
-    
-    $scope.showAlert2 = function() {
-  var myPopup = $ionicPopup.show({
-    template: `
-     <div>
-     <label >Expón el motivo de tu baja</label>
-<textarea name="longText" rows="4" cols="50" placeholder="Escriba su texto..." ng-model="popupData2.returnText"></textarea> <br>
-<label>Fecha aproximada de tu regreso a clases</label>
-        <label class="item-input">
-          Fecha
-          <input type="date" ng-model="popupData2.returnDate">
-        </label>
-    `,
-    title: 'Solicitud de baja temporal',
-    scope: $scope,
-    buttons: [
-     { 
-        text: 'Cancelar',
-        onTap: function() {
-          $scope.popupData2.returnText = null; 
-           $scope.popupData2.returnDate = null; 
-        }
-      },
-      {
-        text: '<b>Solicitar</b> ',
-        type: 'button-positive',
-        onTap: function(e) {
-          if (!$scope.popupData2.returnText || !$scope.popupData2.returnDate) {
-            alert("Ingresa todos los datos")
-              e.preventDefault()
-          } else {
-            return $scope.popupData2;
-          }
-        }
-      }
-    ]
-  }); 
-
-  myPopup.then(function(res) {
-    if (res) {
-      alert("Solicitud enviada")
-    }
-  });
-}; 
- 
-    
-$scope.popupData = {
-  selectedDate: null,
-  availableTimes: [],
-  selectedTime: null
-};
-
-    
-$scope.popupData2 = {
-  returnDate: null,
-  returnText: null
-};
-
-$scope.updateAvailableTimes = function() {
-  const selectedDate = new Date($scope.popupData.selectedDate);
-  const today = new Date();
-  const twoWeeksFromToday = new Date();
-  twoWeeksFromToday.setDate(today.getDate() + 14);
-
-  // Reset available times if out of range
-  if (selectedDate < today || selectedDate > twoWeeksFromToday) {
-    $scope.popupData.availableTimes = [];
-    return;
-  }
-
-  const day = selectedDate.getDay();
-  let times = [];
-
-  if (day === 3 || day === 4 || day === 5) { // Wednesday, Thursday, Friday
-    times = ["11:00 Hrs", "12:00 Hrs", "13:00 Hrs", "14:00 Hrs", "15:00 Hrs", "16:00 Hrs"];
-  } else if (day === 6) { // Saturday
-    times = ["10:00 Hrs", "11:00 Hrs", "12:00 Hrs", "13:00 Hrs", "14:00 Hrs"];
-  } else if (day === 0) { // Sunday
-    times = ["9:00 Hrs", "10:00 Hrs", "11:00 Hrs", "12:00 Hrs", "13:00 Hrs"];
-  } else { // Monday, Tuesday or invalid
-    times = [];
-  }
-
-  $scope.popupData.availableTimes = times;
-};
- }])
-
-
-
-  .controller('attendanceCtrl', ['$scope', 'SharedState', '$ionicPopup', function($scope, SharedState, $ionicPopup){
-
-    
-  SharedState.getNum().then(function(data) {
-       $scope.userData = data.data;
-    $scope.agenda = JSON.parse(data.data.agenda);
-    $scope.userPlan = data.data.plan.split(" ")[0]
-    $scope.userPrice = data.data.plan.split(" ")[2]
-  })
-      $scope.goToPayment = function() {
-  window.location.href = '#/menu/payment';
-};
-       $scope.returnDateFormat = function(date){
-    const dat = new Date(date);
-  const options = { weekday: 'long', month: 'long', day: 'numeric' };
-    var dat2 = dat.toLocaleDateString("es-mx",options).replace(",","");
-    return dat2.charAt(0).toUpperCase() + dat2.slice(1);
-  }
-     $scope.attendanceFilter = function(item) {
-  return item.attendance == ''; 
-};
-
-
-  $scope.selectedOption = null; 
-$scope.showAlert = function() {
-  var myPopup = $ionicPopup.show({
-    template: `
-     <div ng-if="!showSummary">
-     <label >Fecha de falta</label>
-      <select ng-model="popupData.selectedOption" class="custom-select">
-        <option ng-repeat="data in agenda | filter: attendanceFilter" value="{{data}}"> 
-          {{returnDateFormat(data.start)}}
-        </option>
-      </select>
-       <label ng-if="popupData.selectedOption">¿Cómo vas a reponer?</label>
-     <select ng-model="popupData.selectedOption2" class="custom-select" ng-if="popupData.selectedOption">
-      <option value="opc2" > 
-          Tomaré la reposición en otro horario de clase
-        </option>
-     <option value="opc1" > 
-       Tomaré 2 horas seguidas la siguiente semana en mi horario de clase
-        </option>
-      </select>
-      
-   <div ng-if="popupData.selectedOption2 === 'opc2'">
-        <label class="item item-input">
-          Fecha
-          <input type="date" ng-model="popupData.selectedDate" ng-change="updateAvailableTimes()">
-        </label>
-
-        <label class="item item-input" ng-if="popupData.availableTimes.length > 0">
-          Hora
-          <span>{{ selectedTime }}</span>
-        <select ng-model="popupData.selectedTime" class="custom-select2">
-        <option ng-repeat="time in popupData.availableTimes" value="{{time}}">
-          {{time}}
-        </option>
-      </select>
-        </label>
-      </div>
-       </div>  
-       
-      <div ng-if="showSummary">
-        <p><strong>Fecha de reposición:</strong><br> {{popupData.selectedDate | date: 'fullDate'}}</p>
-        <p><strong>Hora de inicio:</strong><br> {{popupData.selectedTime}}</p>
-      </div>
-     
-    `,
-    title: 'Agenda la reposición de tu clase',
-    scope: $scope,
-    buttons: [
-     { 
-        text: 'Cancelar',
-        onTap: function() {
-          $scope.popupData.selectedOption = null; 
-          $scope.popupData.selectedOption2 = null; 
-           $scope.popupData.selectedDate = null; 
-           $scope.popupData.selectedTime = null; 
-          $scope.showSummary = false;
-        }
-      },
-      {
-        text: '<b>Continuar</b> ',
-        type: 'button-positive',
-        onTap: function(e) {
-           if (!$scope.showSummary) {
-            if (!$scope.popupData.selectedDate || !$scope.popupData.selectedTime) {
-              e.preventDefault()
-              if ($scope.popupData.selectedOption2 === 'opc1') {
-                $scope.showSummary = true;
-                var dat = JSON.parse($scope.popupData.selectedOption)
-                var nextClass = new Date(dat.start)
-                nextClass.setDate(nextClass.getDate() + 7);
-                nextClass.setHours(nextClass.getHours() + 6);
-                $scope.popupData.selectedDate = nextClass
-                $scope.popupData.selectedTime = nextClass.getHours()+':00 Hrs'
-              } else if ($scope.popupData.selectedOption2 === 'opc2' && !$scope.popupData.selectedTime) {
-                alert("Ingresa una fecha válida")
-              }  
-            } else { 
-              $scope.showSummary = true;
-              e.preventDefault(); 
-            }
-          } else {
-            return $scope.popupData;
-          }
-        }
-      }
-    ]
-  }); 
-
-  myPopup.then(function(res) {
-    if (res) {
-      $scope.popupData.selectedOption = null; 
-          $scope.popupData.selectedOption2 = null; 
-           $scope.popupData.selectedDate = null; 
-           $scope.popupData.selectedTime = null; 
-          $scope.showSummary = false;
-      alert("Reposición agendada")
-     // alert($scope.userData.name);
-    }
-  });
-}; 
- 
-
-    
-    $scope.showAlert2 = function() {
-  var myPopup = $ionicPopup.show({
-    template: `
-     <div>
-     <label >Expón el motivo de tu baja</label>
-<textarea name="longText" rows="4" cols="50" placeholder="Escriba su texto..." ng-model="popupData2.returnText"></textarea> <br>
-<label>Fecha aproximada de tu regreso a clases</label>
-        <label class="item-input">
-          Fecha
-          <input type="date" ng-model="popupData2.returnDate">
-        </label>
-    `,
-    title: 'Solicitud de baja temporal',
-    scope: $scope,
-    buttons: [
-     { 
-        text: 'Cancelar',
-        onTap: function() {
-          $scope.popupData2.returnText = null; 
-           $scope.popupData2.returnDate = null; 
-        }
-      },
-      {
-        text: '<b>Solicitar</b> ',
-        type: 'button-positive',
-        onTap: function(e) {
-          if (!$scope.popupData2.returnText || !$scope.popupData2.returnDate) {
-            alert("Ingresa todos los datos")
-              e.preventDefault()
-          } else {
-            return $scope.popupData2;
-          }
-        }
-      }
-    ]
-  }); 
-
-  myPopup.then(function(res) {
-    if (res) {
-      alert("Solicitud enviada")
-    }
-  });
-}; 
- 
-    
-$scope.popupData = {
-  selectedDate: null,
-  availableTimes: [],
-  selectedTime: null
-};
-
-    
-$scope.popupData2 = {
-  returnDate: null,
-  returnText: null
-};
-
-$scope.updateAvailableTimes = function() {
-  const selectedDate = new Date($scope.popupData.selectedDate);
-  const today = new Date();
-  const twoWeeksFromToday = new Date();
-  twoWeeksFromToday.setDate(today.getDate() + 14);
-
-  // Reset available times if out of range
-  if (selectedDate < today || selectedDate > twoWeeksFromToday) {
-    $scope.popupData.availableTimes = [];
-    return;
-  }
-
-  const day = selectedDate.getDay();
-  let times = [];
-
-  if (day === 3 || day === 4 || day === 5) { // Wednesday, Thursday, Friday
-    times = ["11:00 Hrs", "12:00 Hrs", "13:00 Hrs", "14:00 Hrs", "15:00 Hrs", "16:00 Hrs"];
-  } else if (day === 6) { // Saturday
-    times = ["10:00 Hrs", "11:00 Hrs", "12:00 Hrs", "13:00 Hrs", "14:00 Hrs"];
-  } else if (day === 0) { // Sunday
-    times = ["9:00 Hrs", "10:00 Hrs", "11:00 Hrs", "12:00 Hrs", "13:00 Hrs"];
-  } else { // Monday, Tuesday or invalid
-    times = [];
-  }
-
-  $scope.popupData.availableTimes = times;
-};
- }])    
 
 
 
